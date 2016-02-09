@@ -1,0 +1,11 @@
+language: python
+python:
+  - "2.7"
+  - "3.5"
+install:
+  - pip -r requirements.txt
+script:
+  - ./manage.py migrate --noinput --traceback
+  - ./manage.py collectstatic --noinput
+  - ./manage.py check
+  - ./manage.py test
