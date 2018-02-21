@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
@@ -21,6 +22,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('archive', kwargs={'slug': self.slug})
 
 
 class Entry(models.Model):
@@ -76,3 +80,14 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse(
+            'detail',
+            kwargs={
+                'slug': self.slug,
+                'year': self.date.year,
+                'month': self.date.month,
+                'day': self.date.day,
+            }
+        )

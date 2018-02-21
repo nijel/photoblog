@@ -17,12 +17,41 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
+from django.views.generic.dates import ArchiveIndexView
+from django.views.generic.dates import DateDetailView
+from posts.models import Entry
+from posts.views import CategoryView, ContactView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('detail/<int:year>/<int:month>/<int:day>/<slug:slug>/',
+         DateDetailView.as_view(
+            model=Entry, date_field="date",
+            month_format='%m',
+         ),
+         name="detail"),
+    path('',
+         ArchiveIndexView.as_view(model=Entry, date_field="date", paginate_by=20),
+         name="index"),
+    path('<int:page>/',
+         ArchiveIndexView.as_view(model=Entry, date_field="date", paginate_by=20),
+         name="index"),
+    path('typ/<slug:slug>/',
+         CategoryView.as_view(),
+         name="archive"),
+    path('typ/<slug:slug>/<int:page>/',
+         CategoryView.as_view(),
+         name="archive"),
+    path('kontakt/',
+         ContactView.as_view(),
+         name="contact"),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(
         settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+    )
+    urlpatterns += static(
+        settings.STATIC_URL, document_root=settings.STATIC_ROOT
     )

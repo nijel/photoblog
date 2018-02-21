@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block content %}
+
+<div class="card-deck">
+
+{% for object in object_list %}
+<a href="{{ object.get_absolute_url }}">
+<div class="card text-center">
+  <img class="card-img-top" src="{{ object.image.crop.400x400 }}" alt="{{ object.title }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ object.title }}</h5>
+    <p class="card-text">{{ object.summary }}</p>
+  </div>
+  <div class="card-footer">
+    <small class="text-muted">{{ object.date|naturalday }}</small>
+  </div>
+</div>
+</a>
+{% endfor %}
+
+</div>
+
+{% endblock %}

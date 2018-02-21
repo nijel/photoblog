@@ -1,0 +1,21 @@
+footer ul {
+    padding:0;
+    margin:1em;
+    max-width:none;
+    clear:both;
+}
+footer li {
+    font-size:smaller;
+    list-style:none;
+    float:left;
+    padding:1em;
+}
+.card {
+    margin-top: 30px;
+}
+a:hover {
+    text-decoration: none;
+}
+main {
+    margin: 30px;
+}

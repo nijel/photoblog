@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block content %}
+
+<h2>{{ object.title }}</h2>
+
+{{ object.summary }}
+
+<img src="{{ object.image.url }}" alt="{{ object.title }}">
+
+{{ object.body }}
+
+<small class="text-muted">{{ object.date|naturalday }}</small>
+
+{% endblock %}
