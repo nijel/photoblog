@@ -35,7 +35,7 @@ class Watermark(FilteredImage):
             (10 + fontsize * .2, height / 2 - fontsize * .5),
             settings.WATERMARK_TEXT,
             font=fnt,
-            fill=(255,255,255,30)
+            fill=(255,255,255,70)
         )
 
         out = Image.alpha_composite(image, txt)
