@@ -16,10 +16,6 @@ class Category(models.Model):
         verbose_name=_('URL slug'),
         db_index=True,
     )
-    description = MarkupField(
-        verbose_name=_('Description'),
-        default_markup_type='markdown'
-    )
 
     def __str__(self):
         return self.name
