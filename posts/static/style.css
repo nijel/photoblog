@@ -20,7 +20,7 @@ footer li {
     float:left;
     padding:1em;
 }
-.card p, .card h5 {
+.card p, .card h4 {
     margin-top: 30px;
     text-decoration: none;
     color: white;
