@@ -17,6 +17,10 @@ class Category(models.Model):
         db_index=True,
     )
 
+    class Meta:
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
+
     def __str__(self):
         return self.name
 
@@ -74,6 +78,10 @@ class Entry(models.Model):
     ppoi = PPOIField(
         'Image PPOI'
     )
+
+    class Meta:
+        verbose_name = _('Post')
+        verbose_name_plural = _('Posts')
 
     def __str__(self):
         return self.title
