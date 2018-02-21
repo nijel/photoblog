@@ -32,7 +32,7 @@ class Watermark(FilteredImage):
 
         # draw text, half opacity
         d.text(
-            (10 + fontsize * .2, height / 2 - fontsize * .5),
+            (10 + fontsize * .2, height - 10 - fontsize - fontsize * .2),
             settings.WATERMARK_TEXT,
             font=fnt,
             fill=(255,255,255,70)
