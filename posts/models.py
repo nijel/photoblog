@@ -2,6 +2,7 @@ from django.urls import reverse
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
+from django.dispatch import receiver
 from markupfield.fields import MarkupField
 from versatileimagefield.fields import VersatileImageField, PPOIField
 
@@ -91,3 +92,11 @@ class Entry(models.Model):
                 'day': self.date.day,
             }
         )
+
+
+@receiver(models.signals.post_delete, sender=Post)
+def delete_post_images(sender, instance, **kwargs):
+    # Deletes Image Renditions
+    instance.image.delete_all_created_images()
+    # Deletes Original Image
+    instance.image.delete(save=False)
