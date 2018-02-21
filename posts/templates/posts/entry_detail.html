@@ -2,6 +2,13 @@
 
 {% load humanize %}
 
+{% block title %}{{ object.title }} - {% endblock %}
+
+{% block description %}{{ object.summary.raw }}{% endblock %}
+{% block head %}
+  <meta property="og:image" content="https://bypetula.cz/{{ object.image.filters.watermark.thumbnail.800x800 }}" />
+{% endblock %}
+
 {% block content %}
 <a href="{{ object.category.get_absolute_url }}"><span class="badge badge-secondary">{{ object.category }}</span></a>
 
