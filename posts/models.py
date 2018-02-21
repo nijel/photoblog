@@ -94,7 +94,7 @@ class Entry(models.Model):
         )
 
 
-@receiver(models.signals.post_delete, sender=Post)
+@receiver(models.signals.post_delete, sender=Entry)
 def delete_post_images(sender, instance, **kwargs):
     # Deletes Image Renditions
     instance.image.delete_all_created_images()

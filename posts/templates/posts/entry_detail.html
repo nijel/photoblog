@@ -3,12 +3,13 @@
 {% load humanize %}
 
 {% block content %}
+<a href="{{ object.category.get_absolute_url }}"><span class="badge badge-secondary">{{ object.category }}</span></a>
 
-<h2>{{ object.title }}</h2>
+<h2>{{ object.title }} </h2>
 
 {{ object.summary }}
 
-<img src="{{ object.image.thumbnail.800x800 }}" alt="{{ object.title }}">
+<img src="{{ object.image.thumbnail.800x800 }}" alt="{{ object.title }}" class="img-thumbnail">
 
 {{ object.body }}
 

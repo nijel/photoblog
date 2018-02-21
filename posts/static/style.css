@@ -10,11 +10,10 @@ footer li {
     float:left;
     padding:1em;
 }
-.card {
+.card p, .card h5 {
     margin-top: 30px;
-}
-a:hover {
     text-decoration: none;
+    color: white;
 }
 main {
     margin: 30px;
