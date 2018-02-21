@@ -23,6 +23,9 @@ footer li {
     color: white;
     text-shadow: 1px 1px black;
 }
+.card-deck .card {
+    margin: 15px;
+}
 main {
     margin: 30px;
 }
