@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-21 22:13+0100\n"
+"POT-Creation-Date: 2018-02-21 22:59+0100\n"
 "PO-Revision-Date: 2018-02-21 15:59+0000\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/photoblog/posts/cs/"
@@ -71,6 +71,22 @@ msgstr "Text"
 
 #: posts/models.py:83
 msgid "Post"
+msgstr ""
+
+#: posts/templates/paginator.html:6 posts/templates/paginator.html:9
+msgid "First"
+msgstr ""
+
+#: posts/templates/paginator.html:7 posts/templates/paginator.html:10
+msgid "Previous"
+msgstr ""
+
+#: posts/templates/paginator.html:16 posts/templates/paginator.html:19
+msgid "Next"
+msgstr ""
+
+#: posts/templates/paginator.html:17 posts/templates/paginator.html:20
+msgid "Last"
 msgstr ""
 
 #~ msgid "Description"
