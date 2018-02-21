@@ -63,3 +63,5 @@ target/
 
 # Django static files
 /static/
+/media/
+/db.sqlite3
