@@ -129,6 +129,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 CONTACT_EMAIL = 'noreply@example.com'
+WATERMARK_TEXT = 'watermark'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
