@@ -28,3 +28,6 @@ main {
 .navbar-brand {
     font-family: 'Conthrax Sb';
 }
+.pagination {
+    margin: 30px;
+}
