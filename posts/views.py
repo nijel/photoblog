@@ -9,6 +9,7 @@ class CategoryView(ArchiveIndexView):
     model = Entry
     date_field = 'date'
     paginate_by = 20
+    template_name = 'posts/entry_category.html'
 
     def get(self, request, slug, **kwargs):
         self.kwargs['category'] = get_object_or_404(Category, slug=slug)
