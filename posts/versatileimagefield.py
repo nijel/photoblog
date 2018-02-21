@@ -17,7 +17,7 @@ class Watermark(FilteredImage):
         txt = Image.new('RGBA', image.size, (255,255,255,0))
 
         height = image.size[1]
-        fontsize = int(image.size[1] * 0.15)
+        fontsize = int(image.size[1] * 0.1)
 
         # get a font
         fnt = ImageFont.truetype(
