@@ -11,10 +11,11 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class EntryAdmin(admin.ModelAdmin):
-    list_display = ['title', 'date', 'category']
+    list_display = ['title', 'summary', 'date', 'category']
     prepopulated_fields = {'slug': ('title',)}
-    search_fields = ['title', 'slug']
+    search_fields = ['title', 'summary', 'description', 'slug']
     ordering = ('-date',)
+    list_filter = ['category']
     date_hierarchy = 'date'
 
 
