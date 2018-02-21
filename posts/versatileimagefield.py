@@ -1,3 +1,4 @@
+import os.path
 from django.conf import settings
 from versatileimagefield.datastructures.filteredimage import FilteredImage
 from versatileimagefield.registry import versatileimagefield_registry
@@ -15,11 +16,15 @@ class Watermark(FilteredImage):
 
         txt = Image.new('RGBA', image.size, (255,255,255,0))
 
+        height = image.size[1]
         fontsize = int(image.size[1] * 0.1)
 
         # get a font
         fnt = ImageFont.truetype(
-            '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
+            os.path.join(
+                os.path.dirname(os.path.dirname(__file__)),
+                'font', 'conthrax-sb.ttf'
+            ),
             fontsize,
         )
         # get a drawing context
@@ -27,7 +32,7 @@ class Watermark(FilteredImage):
 
         # draw text, half opacity
         d.text(
-            (10, image.size[1] - 10 - fontsize),
+            (10 + fontsize * .2, height - 10 - fontsize - fontsize * .2),
             settings.WATERMARK_TEXT,
             font=fnt,
             fill=(255,255,255,30)
