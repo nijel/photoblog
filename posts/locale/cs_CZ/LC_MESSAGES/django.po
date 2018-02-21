@@ -7,17 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-21 16:52+0100\n"
+"POT-Creation-Date: 2018-02-21 22:13+0100\n"
 "PO-Revision-Date: 2018-02-21 15:59+0000\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
-"Language-Team: Czech "
-"<https://hosted.weblate.org/projects/photoblog/posts/cs/>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/photoblog/posts/cs/"
+">\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 2.20-dev\n"
+
+#: posts/apps.py:7 posts/models.py:84
+msgid "Posts"
+msgstr ""
 
 #: posts/forms.py:9
 msgid "Subject"
@@ -31,34 +35,43 @@ msgstr "Váš e-mail"
 msgid "Message"
 msgstr "Zpráva"
 
-#: posts/models.py:11
+#: posts/models.py:12
 msgid "Name"
 msgstr "Název"
 
-#: posts/models.py:15 posts/models.py:36
+#: posts/models.py:16 posts/models.py:37
 msgid "URL slug"
 msgstr "URL slug"
 
-#: posts/models.py:19
-msgid "Description"
-msgstr "Popis"
-
-#: posts/models.py:32
-msgid "Title"
-msgstr "Název"
-
-#: posts/models.py:42
+#: posts/models.py:21 posts/models.py:43
 msgid "Category"
 msgstr "Kategorie"
 
-#: posts/models.py:46
+#: posts/models.py:22
+#, fuzzy
+#| msgid "Category"
+msgid "Categories"
+msgstr "Kategorie"
+
+#: posts/models.py:33
+msgid "Title"
+msgstr "Název"
+
+#: posts/models.py:47
 msgid "Date"
 msgstr "Datum"
 
-#: posts/models.py:51
+#: posts/models.py:52
 msgid "Summary"
 msgstr "Souhrn"
 
-#: posts/models.py:55
+#: posts/models.py:56
 msgid "Text"
 msgstr "Text"
+
+#: posts/models.py:83
+msgid "Post"
+msgstr ""
+
+#~ msgid "Description"
+#~ msgstr "Popis"
