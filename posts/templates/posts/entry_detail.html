@@ -4,7 +4,7 @@
 
 {% block title %}{{ object.title }} - {% endblock %}
 
-{% block description %}{{ object.summary.raw }}{% endblock %}
+{% block description %}{{ object.summary }}{% endblock %}
 
 {% block content %}
 <a href="{{ object.category.get_absolute_url }}"><span class="badge badge-secondary">{{ object.category }}</span></a>

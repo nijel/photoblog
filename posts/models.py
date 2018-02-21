@@ -48,9 +48,9 @@ class Entry(models.Model):
         default=timezone.now,
         db_index=True
     )
-    summary = MarkupField(
+    summary = models.CharField(
         verbose_name=_('Summary'),
-        default_markup_type='markdown'
+        max_length=300,
     )
     body = MarkupField(
         verbose_name=_('Text'),
