@@ -6,14 +6,14 @@ from .models import Category, Entry
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
-    search_fields = ['name', 'slug', 'description']
+    search_fields = ['name', 'slug']
     ordering = ('slug',)
 
 
 class EntryAdmin(admin.ModelAdmin):
     list_display = ['title', 'summary', 'date', 'category']
     prepopulated_fields = {'slug': ('title',)}
-    search_fields = ['title', 'summary', 'description', 'slug']
+    search_fields = ['title', 'summary', 'body', 'slug']
     ordering = ('-date',)
     list_filter = ['category']
     date_hierarchy = 'date'
