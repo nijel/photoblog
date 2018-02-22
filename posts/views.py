@@ -16,7 +16,7 @@ class CategoryView(ArchiveIndexView):
         return super().get(request, kwargs)
 
     def get_queryset(self):
-        return Entry.objects.filter(category=self.kwargs['category'])
+        return super().get_queryset().filter(category=self.kwargs['category'])
 
     def get_context_data(self, **kwargs):
         result = super().get_context_data(**kwargs)
