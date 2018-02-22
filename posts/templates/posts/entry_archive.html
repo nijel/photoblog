@@ -1,28 +1,5 @@
-{% extends "base.html" %}
+{% extends "posts/entry_list.html" %}
 
-{% load humanize %}
-
-{% block content %}
-
-<div class="card-deck">
-
-{% for object in object_list %}
-<a href="{{ object.get_absolute_url }}">
-<div class="card text-center">
-  <img class="card-img" src="{{ object.image.crop.400x400 }}" alt="{{ object.title }}">
-  <div class="card-img-overlay">
-    <p></p>
-    <span class="badge badge-secondary">{{ object.category }}</span>
-    <h4 class="card-title">{{ object.title }}</h4>
-    <p class="card-text">{{ object.summary }}</p>
-    <p class="card-text"><small class="text-muted">{{ object.date|naturalday }}</small></p>
-  </div>
-</div>
-</a>
-{% endfor %}
-
-</div>
-
-{% include "paginator.html" %}
-
+{% block og_image %}
+  <meta property="og:image" content="https://bypetula.cz{{ og_object.image.filters.watermark.thumbnail.800x800 }}" />
 {% endblock %}

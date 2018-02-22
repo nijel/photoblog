@@ -136,6 +136,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CONTACT_EMAIL = 'petula@cihar.com'
 WATERMARK_TEXT = 'byPeťula'
+OG_POST = 6
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
