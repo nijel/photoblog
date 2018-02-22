@@ -15,13 +15,42 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
+from django.contrib.sitemaps import Sitemap
+from django.contrib.sitemaps.views import sitemap, index
 from django.urls import path
 from django.conf.urls.static import static
+from django.utils.timezone import now
 from django.views.generic.base import TemplateView
 from django.views.generic.dates import ArchiveIndexView
 from django.views.generic.dates import DateDetailView
 from posts.models import Entry
 from posts.views import CategoryView, ContactView
+
+from posts.models import Entry, Category
+
+
+class BlogSitemap(Sitemap):
+    changefreq = "never"
+    priority = 0.9
+
+    def items(self):
+        return Entry.objects.filter(date__lte=now())
+
+    def lastmod(self, obj):
+        return obj.date
+
+
+class CategorySitemap(Sitemap):
+    changefreq = "daily"
+    priority = 0.5
+
+    def items(self):
+        return Category.objects.all()
+
+sitemaps = {
+    'prispevky': BlogSitemap(),
+    'typy': CategorySitemap(),
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -46,6 +75,9 @@ urlpatterns = [
     path('kontakt/',
          ContactView.as_view(),
          name="contact"),
+    path('sitemap.xml', index, {'sitemaps': sitemaps}),
+    path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 if settings.DEBUG:

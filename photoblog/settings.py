@@ -26,6 +26,8 @@ SECRET_KEY = 'n958sl6u@7wo-i9r5)k@22kq_4t9a*h!i%v+3ziz&ws+gae(^='
 DEBUG = True
 
 ALLOWED_HOSTS = ['bypetula.cz']
+if DEBUG:
+    ALLOWED_HOSTS += ['127.0.0.1']
 
 ADMINS = (
     ('Michal Čihař', 'michal@cihar.com'),
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.sitemaps',
     'versatileimagefield',
     'crispy_forms',
     'posts',
