@@ -25,8 +25,11 @@ SECRET_KEY = 'n958sl6u@7wo-i9r5)k@22kq_4t9a*h!i%v+3ziz&ws+gae(^='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bypetula.cz']
 
+ADMINS = (
+    ('Michal Čihař', 'michal@cihar.com'),
+)
 
 # Application definition
 
@@ -128,8 +131,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-CONTACT_EMAIL = 'noreply@example.com'
-WATERMARK_TEXT = 'watermark'
+CONTACT_EMAIL = 'petula@cihar.com'
+WATERMARK_TEXT = 'byPeťula'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
