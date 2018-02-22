@@ -19,4 +19,22 @@
 
 <small class="text-muted">{{ object.date|naturalday }}</small>
 
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Your like button code -->
+  <div class="fb-like"
+    data-href="https://bypetula.cz/{{ object.get_absolute_url }}"
+    data-layout="standard"
+    data-action="like"
+    data-show-faces="true">
+  </div>
+
 {% endblock %}
