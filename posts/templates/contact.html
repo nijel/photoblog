@@ -9,7 +9,7 @@
 <form action="{% url 'contact' %}" method="post">
     {% csrf_token %}
     {{ form | crispy }}
-    <input class="btn btn-default" type="submit" value="Odeslat" />
+    <input class="btn btn-primary" type="submit" value="Odeslat" />
 </form>
 
 {% endblock %}
