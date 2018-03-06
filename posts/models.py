@@ -98,6 +98,9 @@ class Entry(models.Model):
             }
         )
 
+    def get_related(self):
+        return self.category.entry_set.exclude(pk=self.pk)[:4]
+
 
 @receiver(models.signals.post_delete, sender=Entry)
 def delete_post_images(sender, instance, **kwargs):

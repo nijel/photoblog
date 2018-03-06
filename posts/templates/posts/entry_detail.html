@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load humanize %}
+{% load i18n %}
 
 {% block title %}{{ object.title }} - {% endblock %}
 
@@ -35,5 +36,13 @@
     data-share="true"
     data-show-faces="true">
   </div>
+
+<h2>{% trans "Related posts" %}</h2>
+
+<div class="card-deck">
+{% for related in object.get_related %}
+{% include "posts/entry_list_item.html" with object=related %}
+{% endfor %}
+</div>
 
 {% endblock %}
