@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-12 23:29+0100\n"
-"PO-Revision-Date: 2018-02-21 22:00+0000\n"
+"PO-Revision-Date: 2018-03-12 22:29+0000\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/photoblog/posts/cs/"
 ">\n"
@@ -73,7 +73,7 @@ msgstr "Příspěvek"
 
 #: posts/templates/base.html:78
 msgid "Website maintained by"
-msgstr ""
+msgstr "O stránky se stará"
 
 #: posts/templates/paginator.html:6 posts/templates/paginator.html:9
 msgid "First"
@@ -93,7 +93,7 @@ msgstr "Poslední"
 
 #: posts/templates/posts/entry_detail.html:40
 msgid "Related posts"
-msgstr ""
+msgstr "Související příspěvky"
 
 #~ msgid "Description"
 #~ msgstr "Popis"
