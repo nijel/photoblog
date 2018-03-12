@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-21 22:59+0100\n"
+"POT-Creation-Date: 2018-03-12 23:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,6 +69,10 @@ msgstr ""
 msgid "Post"
 msgstr ""
 
+#: posts/templates/base.html:78
+msgid "Website maintained by"
+msgstr ""
+
 #: posts/templates/paginator.html:6 posts/templates/paginator.html:9
 msgid "First"
 msgstr ""
@@ -83,4 +87,8 @@ msgstr ""
 
 #: posts/templates/paginator.html:17 posts/templates/paginator.html:20
 msgid "Last"
+msgstr ""
+
+#: posts/templates/posts/entry_detail.html:40
+msgid "Related posts"
 msgstr ""
