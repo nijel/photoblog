@@ -3,6 +3,9 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.utils.translation import ugettext_lazy as _
 
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV3
+
 
 class ContactForm(forms.Form):
     subject = forms.CharField(
@@ -20,6 +23,7 @@ class ContactForm(forms.Form):
         max_length=2000,
         widget=forms.Textarea
     )
+    captcha = ReCaptchaField(widget=ReCaptchaV3)
 
     def send_email(self):
         send_mail(

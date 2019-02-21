@@ -3,3 +3,4 @@ django-markupfield
 Markdown
 django-versatileimagefield
 django-crispy-forms
+django-recaptcha
