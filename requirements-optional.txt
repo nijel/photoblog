@@ -1,3 +1,4 @@
 django_redis
 mysqlclient
+hiredis
 rollbar
