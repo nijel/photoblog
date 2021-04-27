@@ -48,6 +48,9 @@ class ArchiveView(ArchiveIndexView):
     date_field = "date"
     paginate_by = 20
 
+    def get_queryset(self):
+        return super().get_queryset().prefetch_related("category")
+
     def get_context_data(self, **kwargs):
         result = super().get_context_data(**kwargs)
         result["page_range"] = get_page_range(result["page_obj"])
