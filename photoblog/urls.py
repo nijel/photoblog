@@ -20,10 +20,10 @@ from django.contrib.sitemaps import Sitemap
 from django.contrib.sitemaps.views import index, sitemap
 from django.urls import path
 from django.utils.timezone import now
-from django.views.generic.dates import ArchiveIndexView, DateDetailView
+from django.views.generic.dates import DateDetailView
 
 from posts.models import Category, Entry
-from posts.views import CategoryView, ContactView
+from posts.views import ArchiveView, CategoryView, ContactView
 
 
 class BlogSitemap(Sitemap):
@@ -63,12 +63,12 @@ urlpatterns = [
     ),
     path(
         "",
-        ArchiveIndexView.as_view(model=Entry, date_field="date", paginate_by=20),
+        ArchiveView.as_view(),
         name="index",
     ),
     path(
         "<int:page>/",
-        ArchiveIndexView.as_view(model=Entry, date_field="date", paginate_by=20),
+        ArchiveView.as_view(),
         name="index",
     ),
     path("typ/<slug:slug>/", CategoryView.as_view(), name="archive"),

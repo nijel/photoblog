@@ -6,10 +6,13 @@ from .forms import ContactForm
 from .models import Category, Entry
 
 
-class CategoryView(ArchiveIndexView):
+class ArchiveView(ArchiveIndexView):
     model = Entry
     date_field = "date"
     paginate_by = 20
+
+
+class CategoryView(ArchiveView):
     template_name = "posts/entry_category.html"
 
     def get(self, request, slug, **kwargs):
