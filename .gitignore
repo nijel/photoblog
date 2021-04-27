@@ -64,3 +64,6 @@ target/
 /static/
 /media/
 /db.sqlite3
+
+# Virtualenv
+.venv
