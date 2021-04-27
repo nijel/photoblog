@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps import Sitemap
 from django.contrib.sitemaps.views import index, sitemap
-from django.urls import path
+from django.urls import include, path
 from django.utils.timezone import now
 from django.views.generic.dates import DateDetailView
 
@@ -86,3 +86,7 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    if "debug_toolbar" in settings.INSTALLED_APPS:
+        import debug_toolbar
+
+        urlpatterns += [path("__debug__/", include(debug_toolbar.urls))]
