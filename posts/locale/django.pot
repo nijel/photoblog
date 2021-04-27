@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-12 23:29+0100\n"
+"POT-Creation-Date: 2021-04-27 09:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,78 +17,62 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: posts/apps.py:7 posts/models.py:84
+#: posts/apps.py:7 posts/models.py:63
 msgid "Posts"
 msgstr ""
 
-#: posts/forms.py:9
+#: posts/forms.py:10
 msgid "Subject"
 msgstr ""
 
-#: posts/forms.py:14
+#: posts/forms.py:11
 msgid "Your email"
 msgstr ""
 
-#: posts/forms.py:18
+#: posts/forms.py:13
 msgid "Message"
 msgstr ""
 
-#: posts/models.py:12
+#: posts/models.py:11
 msgid "Name"
 msgstr ""
 
-#: posts/models.py:16 posts/models.py:37
+#: posts/models.py:13 posts/models.py:31
 msgid "URL slug"
 msgstr ""
 
-#: posts/models.py:21 posts/models.py:43
+#: posts/models.py:18 posts/models.py:35
 msgid "Category"
 msgstr ""
 
-#: posts/models.py:22
+#: posts/models.py:19
 msgid "Categories"
 msgstr ""
 
-#: posts/models.py:33
+#: posts/models.py:29
 msgid "Title"
 msgstr ""
 
-#: posts/models.py:47
+#: posts/models.py:39
 msgid "Date"
 msgstr ""
 
-#: posts/models.py:52
+#: posts/models.py:42
 msgid "Summary"
 msgstr ""
 
-#: posts/models.py:56
+#: posts/models.py:45
 msgid "Text"
 msgstr ""
 
-#: posts/models.py:83
+#: posts/models.py:62
 msgid "Post"
 msgstr ""
 
-#: posts/templates/base.html:78
+#: posts/templates/base.html:79
 msgid "Website maintained by"
 msgstr ""
 
-#: posts/templates/paginator.html:6 posts/templates/paginator.html:9
-msgid "First"
-msgstr ""
-
-#: posts/templates/paginator.html:7 posts/templates/paginator.html:10
-msgid "Previous"
-msgstr ""
-
-#: posts/templates/paginator.html:16 posts/templates/paginator.html:19
-msgid "Next"
-msgstr ""
-
-#: posts/templates/paginator.html:17 posts/templates/paginator.html:20
-msgid "Last"
-msgstr ""
-
-#: posts/templates/posts/entry_detail.html:40
+#: posts/templates/posts/entry_detail.html:43
 msgid "Related posts"
 msgstr ""
