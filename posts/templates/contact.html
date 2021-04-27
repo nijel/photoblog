@@ -4,6 +4,7 @@
 
 {% block content %}
 
+<div class="container">
 <h2>Kontakt</h2>
 
 <form action="{% url 'contact' %}" method="post">
@@ -11,5 +12,5 @@
     {{ form | crispy }}
     <input class="btn btn-primary" type="submit" value="Odeslat" />
 </form>
-
+</div>
 {% endblock %}
