@@ -78,6 +78,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "photoblog.wsgi.application"
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 
 # Database
