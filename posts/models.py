@@ -1,101 +1,80 @@
-from django.urls import reverse
 from django.db import models
+from django.dispatch import receiver
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from django.dispatch import receiver
 from markupfield.fields import MarkupField
-from versatileimagefield.fields import VersatileImageField, PPOIField
+from versatileimagefield.fields import PPOIField, VersatileImageField
 
 
 class Category(models.Model):
-    name = models.CharField(
-        verbose_name=_('Name'),
-        max_length=100
-    )
+    name = models.CharField(verbose_name=_("Name"), max_length=100)
     slug = models.SlugField(
-        verbose_name=_('URL slug'),
+        verbose_name=_("URL slug"),
         db_index=True,
     )
 
     class Meta:
-        verbose_name = _('Category')
-        verbose_name_plural = _('Categories')
+        verbose_name = _("Category")
+        verbose_name_plural = _("Categories")
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('archive', kwargs={'slug': self.slug})
+        return reverse("archive", kwargs={"slug": self.slug})
 
 
 class Entry(models.Model):
-    title = models.CharField(
-        verbose_name=_('Title'),
-        max_length=100
-    )
+    title = models.CharField(verbose_name=_("Title"), max_length=100)
     slug = models.SlugField(
-        verbose_name=_('URL slug'),
-        db_index=True,
-        unique_for_date='date'
+        verbose_name=_("URL slug"), db_index=True, unique_for_date="date"
     )
     category = models.ForeignKey(
         Category,
-        verbose_name=_('Category'),
+        verbose_name=_("Category"),
         on_delete=models.deletion.CASCADE,
     )
     date = models.DateTimeField(
-        verbose_name=_('Date'),
-        default=timezone.now,
-        db_index=True
+        verbose_name=_("Date"), default=timezone.now, db_index=True
     )
     summary = models.CharField(
-        verbose_name=_('Summary'),
+        verbose_name=_("Summary"),
         max_length=300,
     )
-    body = MarkupField(
-        verbose_name=_('Text'),
-        default_markup_type='markdown'
-    )
+    body = MarkupField(verbose_name=_("Text"), default_markup_type="markdown")
     image = VersatileImageField(
-        'Image',
-        upload_to='posts/%Y/%m/%d/',
-        width_field='width',
-        height_field='height',
-        ppoi_field='ppoi'
+        "Image",
+        upload_to="posts/%Y/%m/%d/",
+        width_field="width",
+        height_field="height",
+        ppoi_field="ppoi",
     )
     height = models.PositiveIntegerField(
-        'Image Height',
-        editable=False,
-        blank=True,
-        null=True
+        "Image Height", editable=False, blank=True, null=True
     )
     width = models.PositiveIntegerField(
-        'Image Width',
-        editable=False,
-        blank=True,
-        null=True
+        "Image Width", editable=False, blank=True, null=True
     )
-    ppoi = PPOIField(
-        'Image PPOI'
-    )
+    ppoi = PPOIField("Image PPOI")
 
     class Meta:
-        verbose_name = _('Post')
-        verbose_name_plural = _('Posts')
-        ordering = ('-date',)
+        verbose_name = _("Post")
+        verbose_name_plural = _("Posts")
+        ordering = ("-date",)
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse(
-            'detail',
+            "detail",
             kwargs={
-                'slug': self.slug,
-                'year': self.date.year,
-                'month': self.date.month,
-                'day': self.date.day,
-            }
+                "slug": self.slug,
+                "year": self.date.year,
+                "month": self.date.month,
+                "day": self.date.day,
+            },
         )
 
     def get_related(self):

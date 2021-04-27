@@ -6,20 +6,20 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('posts', '0001_initial'),
+        ("posts", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='category',
-            name='_description_rendered',
+            model_name="category",
+            name="_description_rendered",
         ),
         migrations.RemoveField(
-            model_name='category',
-            name='description',
+            model_name="category",
+            name="description",
         ),
         migrations.RemoveField(
-            model_name='category',
-            name='description_markup_type',
+            model_name="category",
+            name="description_markup_type",
         ),
     ]

@@ -7,7 +7,6 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-yaml
-      - id: check-toml
       - id: requirements-txt-fixer
       - id: check-merge-conflict
       - id: debug-statements
@@ -71,20 +70,6 @@ repos:
           |vue\
           |yaml|yml\
           )$"
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v7.24.0
-    hooks:
-      - id: eslint
-        args: ["--format=compact"]
-        additional_dependencies:
-          - prettier@2.2.1
-          - eslint@>=6.2.2
-          - eslint-plugin-import@>=2.18.0
-          - eslint-plugin-node@>=9.1.0
-          - eslint-plugin-promise@>=4.2.1
-          - eslint-plugin-standard@>=4.0.0
-          - eslint-config-prettier@latest
-          - eslint-plugin-prettier@latest
   - repo: https://github.com/awebdeveloper/pre-commit-stylelint
     rev: 0.0.2
     hooks:
@@ -97,10 +82,5 @@ repos:
           - prettier@2.2.1
 
 exclude: "^\
-  media/colorbox/colorbox.css|\
-  media/colorbox/jquery.colorbox-min.js|\
-  html/downloads/doap/wammu.xml|\
-  html/downloads/doap/gammu.xml|\
-  html/downloads/pad/gammu.xml|\
-  html/downloads/pad/wammu.xml\
+  font.*\
   $"

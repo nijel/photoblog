@@ -14,19 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps import Sitemap
-from django.contrib.sitemaps.views import sitemap, index
+from django.contrib.sitemaps.views import index, sitemap
 from django.urls import path
-from django.conf.urls.static import static
 from django.utils.timezone import now
-from django.views.generic.base import TemplateView
-from django.views.generic.dates import ArchiveIndexView
-from django.views.generic.dates import DateDetailView
-from posts.models import Entry
-from posts.views import CategoryView, ContactView
+from django.views.generic.dates import ArchiveIndexView, DateDetailView
 
-from posts.models import Entry, Category
+from posts.models import Category, Entry
+from posts.views import CategoryView, ContactView
 
 
 class BlogSitemap(Sitemap):
@@ -47,43 +44,45 @@ class CategorySitemap(Sitemap):
     def items(self):
         return Category.objects.all()
 
+
 sitemaps = {
-    'prispevky': BlogSitemap(),
-    'typy': CategorySitemap(),
+    "prispevky": BlogSitemap(),
+    "typy": CategorySitemap(),
 }
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('detail/<int:year>/<int:month>/<int:day>/<slug:slug>/',
-         DateDetailView.as_view(
-            model=Entry, date_field="date",
-            month_format='%m',
-         ),
-         name="detail"),
-    path('',
-         ArchiveIndexView.as_view(model=Entry, date_field="date", paginate_by=20),
-         name="index"),
-    path('<int:page>/',
-         ArchiveIndexView.as_view(model=Entry, date_field="date", paginate_by=20),
-         name="index"),
-    path('typ/<slug:slug>/',
-         CategoryView.as_view(),
-         name="archive"),
-    path('typ/<slug:slug>/<int:page>/',
-         CategoryView.as_view(),
-         name="archive"),
-    path('kontakt/',
-         ContactView.as_view(),
-         name="contact"),
-    path('sitemap.xml', index, {'sitemaps': sitemaps}),
-    path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps},
-         name='django.contrib.sitemaps.views.sitemap'),
+    path("admin/", admin.site.urls),
+    path(
+        "detail/<int:year>/<int:month>/<int:day>/<slug:slug>/",
+        DateDetailView.as_view(
+            model=Entry,
+            date_field="date",
+            month_format="%m",
+        ),
+        name="detail",
+    ),
+    path(
+        "",
+        ArchiveIndexView.as_view(model=Entry, date_field="date", paginate_by=20),
+        name="index",
+    ),
+    path(
+        "<int:page>/",
+        ArchiveIndexView.as_view(model=Entry, date_field="date", paginate_by=20),
+        name="index",
+    ),
+    path("typ/<slug:slug>/", CategoryView.as_view(), name="archive"),
+    path("typ/<slug:slug>/<int:page>/", CategoryView.as_view(), name="archive"),
+    path("kontakt/", ContactView.as_view(), name="contact"),
+    path("sitemap.xml", index, {"sitemaps": sitemaps}),
+    path(
+        "sitemap-<section>.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
-    )
-    urlpatterns += static(
-        settings.STATIC_URL, document_root=settings.STATIC_ROOT
-    )
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

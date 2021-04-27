@@ -1,40 +1,41 @@
 @font-face {
-    font-family: 'Conthrax Sb';
-    src: url('ConthraxSb-Regular.eot');
-    src: url('ConthraxSb-Regular.eot?#iefix') format('embedded-opentype'),
-        url('ConthraxSb-Regular.woff2') format('woff2'),
-        url('ConthraxSb-Regular.woff') format('woff'),
-        url('conthrax-sb.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Conthrax Sb";
+  src: url("ConthraxSb-Regular.eot");
+  src: url("ConthraxSb-Regular.eot?#iefix") format("embedded-opentype"),
+    url("ConthraxSb-Regular.woff2") format("woff2"),
+    url("ConthraxSb-Regular.woff") format("woff"),
+    url("conthrax-sb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 footer ul {
-    padding:0;
-    margin:1em;
-    max-width:none;
-    clear:both;
+  padding: 0;
+  margin: 1em;
+  max-width: none;
+  clear: both;
 }
 footer li {
-    font-size:smaller;
-    list-style:none;
-    float:left;
-    padding:1em;
+  font-size: smaller;
+  list-style: none;
+  float: left;
+  padding: 1em;
 }
-.card p, .card h4 {
-    margin-top: 30px;
-    text-decoration: none;
-    color: white;
-    text-shadow: 1px 1px black;
+.card p,
+.card h4 {
+  margin-top: 30px;
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px black;
 }
 .card-deck .card {
-    margin: 15px;
+  margin: 15px;
 }
 main {
-    margin: 30px;
+  margin: 30px;
 }
 .navbar-brand {
-    font-family: 'Conthrax Sb';
+  font-family: "Conthrax Sb";
 }
 .pagination {
-    margin: 30px;
+  margin: 30px;
 }
