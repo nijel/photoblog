@@ -10,6 +10,18 @@
 
 </div>
 
-{% include "paginator.html" %}
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    {% for pg in page_range %}
+      <li class="page-item {% if pg == page_obj.number %}active{% elif pg == "."%}disabled{% endif %}">
+        {% if pg == "." %}
+          <a class="page-link">…</a>
+        {% else %}
+          <a href="{{ request.path }}?page={{ pg }}" class="page-link">{{ pg }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
 
 {% endblock %}
