@@ -1,4 +1,4 @@
-Django==3.2.1
+Django==3.2.2
 django-crispy-forms==1.11.2
 django-markupfield==2.0.0
 django-recaptcha==2.0.6
