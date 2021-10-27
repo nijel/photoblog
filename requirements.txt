@@ -3,6 +3,6 @@ django-crispy-forms==1.13.0
 django-markupfield==2.0.1
 django-recaptcha==2.0.6
 django-versatileimagefield==2.2
-docutils==0.17.1
+docutils==0.18
 Markdown==3.3.4
 Pillow==8.4.0
