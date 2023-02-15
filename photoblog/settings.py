@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.sitemaps",
     "versatileimagefield",
     "crispy_forms",
+    "crispy_bootstrap4",
     "captcha",
     "posts",
 ]
@@ -143,6 +144,7 @@ CONTACT_EMAIL = "petula@cihar.com"
 WATERMARK_TEXT = "byPeťula"
 OG_POST = 6
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 VERSATILEIMAGEFIELD_SETTINGS = {
