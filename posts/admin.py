@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import Category, Entry
 
 
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ["name", "slug"]
     prepopulated_fields = {"slug": ("name",)}
@@ -10,6 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ("slug",)
 
 
+@admin.register(Entry)
 class EntryAdmin(admin.ModelAdmin):
     list_display = ["title", "summary", "date", "category"]
     prepopulated_fields = {"slug": ("title",)}
@@ -17,7 +19,3 @@ class EntryAdmin(admin.ModelAdmin):
     ordering = ("-date",)
     list_filter = ["category"]
     date_hierarchy = "date"
-
-
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Entry, EntryAdmin)
