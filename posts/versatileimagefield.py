@@ -9,9 +9,7 @@ from versatileimagefield.registry import versatileimagefield_registry
 
 class Watermark(FilteredImage):
     def process_image(self, image, image_format, save_kwargs=None):
-        """
-        Returns a BytesIO instance of `image` with inverted colors
-        """
+        """Return a BytesIO instance of `image` with inverted colors."""
         if save_kwargs is None:
             save_kwargs = {}
         if image.mode != "RGBA":
