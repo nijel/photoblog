@@ -1,7 +1,8 @@
 @font-face {
   font-family: "Conthrax Sb";
   src: url("ConthraxSb-Regular.eot");
-  src: url("ConthraxSb-Regular.eot?#iefix") format("embedded-opentype"),
+  src:
+    url("ConthraxSb-Regular.eot?#iefix") format("embedded-opentype"),
     url("ConthraxSb-Regular.woff2") format("woff2"),
     url("ConthraxSb-Regular.woff") format("woff"),
     url("conthrax-sb.ttf") format("truetype");
