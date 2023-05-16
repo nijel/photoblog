@@ -74,9 +74,6 @@ repos:
         args: ["--formatter=compact"]
         additional_dependencies:
           - stylelint@latest
-          - stylelint-config-prettier@latest
-          - stylelint-prettier@latest
-          - prettier@2.2.1
 
 exclude: "^\
   font.*\
