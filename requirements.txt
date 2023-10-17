@@ -1,4 +1,4 @@
-crispy-bootstrap4==2022.1
+crispy-bootstrap4==2023.1
 Django==4.2.6
 django-crispy-forms==2.1
 django-markupfield==2.0.1
