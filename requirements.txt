@@ -2,7 +2,7 @@ crispy-bootstrap4==2023.1
 Django==4.2.7
 django-crispy-forms==2.1
 django-markupfield==2.0.1
-django-recaptcha==3.0.0
+django-recaptcha==4.0.0
 django-versatileimagefield==3.0
 docutils==0.20.1
 Markdown==3.5.1
