@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "versatileimagefield",
     "crispy_forms",
     "crispy_bootstrap4",
-    "captcha",
+    "django_recaptcha",
     "posts",
 ]
 

@@ -1,9 +1,9 @@
-from captcha.fields import ReCaptchaField
-from captcha.widgets import ReCaptchaV3
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
 from django.utils.translation import gettext_lazy as _
+from django_recaptcha.fields import ReCaptchaField
+from django_recaptcha.widgets import ReCaptchaV3
 
 
 class ContactForm(forms.Form):
