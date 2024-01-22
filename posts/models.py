@@ -4,11 +4,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from markupfield.fields import MarkupField
-from PIL import Image
 from versatileimagefield.fields import PPOIField, VersatileImageField
-
-# fixes https://github.com/respondcreate/django-versatileimagefield/issues/203
-Image.ANTIALIAS = Image.Resampling.LANCZOS
 
 
 class Category(models.Model):
