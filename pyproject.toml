@@ -4,7 +4,7 @@ profile = "black"
 [tool.ruff]
 ignore = ["D211", "D212", "D10"]
 output-format = "github"
-select = ["E", "F", "B", "A", "C4", "DJ", "D", "ERA", "EXE", "G", "T20", "RET", "SLF", "N"]
+select = ["E", "F", "B", "A", "C4", "DJ", "D", "ERA", "EXE", "G", "T20", "RET", "SLF", "N", "I"]
 
 [tool.ruff.mccabe]
 max-complexity = 16
