@@ -23,7 +23,9 @@ class Watermark(FilteredImage):
         # get a font
         fnt = ImageFont.truetype(
             os.path.join(
-                os.path.dirname(os.path.dirname(__file__)), "font", "conthrax-sb.ttf"
+                os.path.dirname(os.path.dirname(__file__)),
+                "font",
+                "conthrax-sb.ttf",
             ),
             fontsize,
         )

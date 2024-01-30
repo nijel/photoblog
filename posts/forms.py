@@ -10,7 +10,10 @@ class ContactForm(forms.Form):
     subject = forms.CharField(label=_("Subject"), required=True, max_length=100)
     email = forms.EmailField(label=_("Your email"), required=True)
     message = forms.CharField(
-        label=_("Message"), required=True, max_length=2000, widget=forms.Textarea
+        label=_("Message"),
+        required=True,
+        max_length=2000,
+        widget=forms.Textarea,
     )
     captcha = ReCaptchaField(widget=ReCaptchaV3)
 

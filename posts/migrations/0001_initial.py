@@ -30,7 +30,8 @@ class Migration(migrations.Migration):
                 (
                     "description",
                     markupfield.fields.MarkupField(
-                        rendered_field=True, verbose_name="Description"
+                        rendered_field=True,
+                        verbose_name="Description",
                     ),
                 ),
                 (
@@ -78,7 +79,8 @@ class Migration(migrations.Migration):
                 (
                     "summary",
                     markupfield.fields.MarkupField(
-                        rendered_field=True, verbose_name="Summary"
+                        rendered_field=True,
+                        verbose_name="Summary",
                     ),
                 ),
                 (
@@ -98,7 +100,8 @@ class Migration(migrations.Migration):
                 (
                     "body",
                     markupfield.fields.MarkupField(
-                        rendered_field=True, verbose_name="Text"
+                        rendered_field=True,
+                        verbose_name="Text",
                     ),
                 ),
                 ("_summary_rendered", models.TextField(editable=False)),

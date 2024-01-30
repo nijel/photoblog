@@ -28,7 +28,9 @@ class Category(models.Model):
 class Entry(models.Model):
     title = models.CharField(verbose_name=_("Title"), max_length=100)
     slug = models.SlugField(
-        verbose_name=_("URL slug"), db_index=True, unique_for_date="date"
+        verbose_name=_("URL slug"),
+        db_index=True,
+        unique_for_date="date",
     )
     category = models.ForeignKey(
         Category,
@@ -36,7 +38,9 @@ class Entry(models.Model):
         on_delete=models.deletion.CASCADE,
     )
     date = models.DateTimeField(
-        verbose_name=_("Date"), default=timezone.now, db_index=True
+        verbose_name=_("Date"),
+        default=timezone.now,
+        db_index=True,
     )
     summary = models.CharField(
         verbose_name=_("Summary"),
@@ -51,10 +55,16 @@ class Entry(models.Model):
         ppoi_field="ppoi",
     )
     height = models.PositiveIntegerField(
-        "Image Height", editable=False, blank=True, null=True
+        "Image Height",
+        editable=False,
+        blank=True,
+        null=True,
     )
     width = models.PositiveIntegerField(
-        "Image Width", editable=False, blank=True, null=True
+        "Image Width",
+        editable=False,
+        blank=True,
+        null=True,
     )
     ppoi = PPOIField("Image PPOI")
 
