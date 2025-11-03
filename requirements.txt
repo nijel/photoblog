@@ -5,5 +5,5 @@ django-markupfield==2.0.1
 django-recaptcha==4.1.0
 django-versatileimagefield==3.1
 docutils==0.22.2
-Markdown==3.9
+Markdown==3.10
 Pillow==12.0.0
