@@ -2,6 +2,9 @@
 profile = "black"
 
 [tool.ruff]
+output-format = "github"
+
+[tool.ruff.lint]
 ignore = [
   "D211",
   "D212",
@@ -15,10 +18,10 @@ ignore = [
   "ARG002",
   "PT",
   "PLR2004",
+  "CPY001",
   "TRY003"
 ]
-output-format = "github"
 select = ["ALL"]
 
-[tool.ruff.mccabe]
+[tool.ruff.lint.mccabe]
 max-complexity = 16
